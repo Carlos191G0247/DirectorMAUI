@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DirectorMAUI.Views.IniciarSesionView"
+             xmlns:vm="clr-namespace:DirectorMAUI.ViewModel"
+             Title="IniciarSesionView" NavigationPage.HasNavigationBar="False" Background="#005d53" Opacity="50" >
+    <ContentPage.BindingContext>
+        <vm:DirectorViewModel ></vm:DirectorViewModel>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout 
+            Spacing="45"
+            Padding="30,30"
+            VerticalOptions="Center">
+
+        <VerticalStackLayout.Background>
+            <RadialGradientBrush>
+
+                <GradientStop Color="#00966b"
+                          Offset="0.1" />
+                <GradientStop Color="#005d53"
+                          Offset="1.0" />
+            </RadialGradientBrush>
+        </VerticalStackLayout.Background>
+
+        <Image
+                Source="logo.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+        <Entry Background="white" TextColor="Black" Text="{Binding usuario.Usuario1}"
+            Placeholder="Usuario"
+            
+            VerticalOptions="Center" 
+             />
+        <Entry Background="white" TextColor="Black" Text="{Binding usuario.Contraseña}"
+            Placeholder="Contraseña"
+            IsPassword="True"
+            VerticalOptions="Center" />
+        <Button Command="{Binding IniciarSesionCommand}" CharacterSpacing="10" TextColor="White" TextTransform="Uppercase" Text="INICIAR" FontAttributes="Bold" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="1,0">
+                    <GradientStop Color="#FFA41E"
+                          Offset="0.1" />
+                    <GradientStop Color="#E68D20"
+                          Offset="1.0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

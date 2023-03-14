@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:DirectorMAUI.ViewModel"
+             x:Class="DirectorMAUI.Views.InsertarDocenteView" NavigationPage.HasNavigationBar="False" 
+              >
+
+
+    <ScrollView>
+        <VerticalStackLayout 
+            Spacing="10"
+            Padding="40,30"
+            VerticalOptions="Center">
+
+            <VerticalStackLayout.Background>
+                <RadialGradientBrush>
+
+                    <GradientStop Color="#00966b"
+                          Offset="0.1" />
+                    <GradientStop Color="#005d53"
+                          Offset="1.0" />
+                </RadialGradientBrush>
+            </VerticalStackLayout.Background>
+            <Label Text="AGREGAR DOCENTE" FontSize="Title" HorizontalTextAlignment="Center"></Label>
+            <Image
+                Source="logo.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+            <Entry
+                TextColor="Black"
+            BackgroundColor="White"
+            Placeholder="Nombre"
+            Text="{Binding docente.Nombre}"
+          
+            PlaceholderColor="Black"   />
+            <Entry
+                                TextColor="Black"
+            BackgroundColor="White"  
+            Placeholder="ApellidoPaterno"
+            Text="{Binding docente.ApellidoPaterno}"
+            PlaceholderColor="Black"     />
+            <Entry
+                 TextColor="Black"
+            BackgroundColor="White"   
+            Placeholder="ApellidoMaterno"
+            Text="{Binding docente.ApellidoMaterno}"
+            PlaceholderColor="Black"     />
+            <Entry
+                                TextColor="Black"
+            BackgroundColor="White"       
+            Placeholder="Correo"
+              Text="{Binding docente.Correo}"
+            PlaceholderColor="Black"     />
+            <Entry
+                                TextColor="Black"
+            BackgroundColor="White"       
+            Placeholder="Telefono"
+              Text="{Binding docente.Telefono}"
+            PlaceholderColor="Black"     />
+            <Entry
+                                TextColor="Black"
+            BackgroundColor="White"       
+            Placeholder="Edad"
+              Text="{Binding docente.Edad}"
+            PlaceholderColor="Black"  
+            />
+            <Entry
+                                TextColor="Black"
+            BackgroundColor="White"       
+            Placeholder="TipoDocente"
+              Text="{Binding docente.TipoDocente}"
+            PlaceholderColor="Black"     
+            />
+
+            <Picker ItemsSource="{Binding UsuarioList}" ItemDisplayBinding="{Binding Usuario1}" SelectedItem="{Binding SUS}" BackgroundColor="White"    TextColor="White"></Picker>
+
+            <Button Command="{Binding InsertDocentesCommand}"  TextColor="White" TextTransform="Uppercase" Text="AGREGAR" FontAttributes="Bold" >
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Color="#FFA41E"
+                          Offset="0.1" />
+                        <GradientStop Color="#E68D20"
+                          Offset="1.0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+
+        </VerticalStackLayout>
+
+
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DirectorMAUI.Views.InsertarUsuarioView"
+             Title="InsertarUsuarioView" NavigationPage.HasNavigationBar="False" BackgroundColor="#005d53" >
+
+    <ScrollView>
+        <VerticalStackLayout 
+            Spacing="50"
+            Padding="40,30"
+            VerticalOptions="Center" >
+        <VerticalStackLayout.Background>
+            
+            <RadialGradientBrush>
+
+                <GradientStop Color="#00966b"
+                          Offset="0.1" />
+                <GradientStop Color="#005d53"
+                          Offset="1.0" />
+            </RadialGradientBrush>
+        </VerticalStackLayout.Background>
+            <Label Text="AGREGAR USUARIO" FontSize="Title" HorizontalTextAlignment="Center"></Label>
+            <Image
+                Source="logo.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+            <Entry
+           
+            Text="{Binding usuario.Usuario1}"
+            TextColor="Black"
+            BackgroundColor="White"
+            Placeholder="Usuario"
+            PlaceholderColor="Black"
+        />
+        <Entry
+            Text="{Binding usuario.Contraseña}"
+            TextColor="Black"
+            BackgroundColor="White"
+            Placeholder="Contraseña"
+            PlaceholderColor="Black"
+             />
+
+
+
+        <Button Command="{Binding InsertUsuarioCommand}"  TextColor="White" TextTransform="Uppercase" Text="AGREGAR" FontAttributes="Bold"  >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="1,0">
+                    <GradientStop Color="#FFA41E"
+                          Offset="0.1" />
+                    <GradientStop Color="#E68D20"
+                          Offset="1.0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

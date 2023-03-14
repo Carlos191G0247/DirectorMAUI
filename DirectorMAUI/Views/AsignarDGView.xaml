@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:DirectorMAUI.ViewModel"
+             x:Class="DirectorMAUI.Views.AsignarDGView"
+             Title="AsignarDGView">
+    <ContentPage.BindingContext>
+        <vm:DirectorViewModel></vm:DirectorViewModel>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout>
+        <Picker ItemsSource="{Binding DocenteList}" ItemDisplayBinding="{Binding Nombre}" SelectedItem="{Binding doc}" BackgroundColor="White"    TextColor="White"></Picker>
+
+        <Picker ItemsSource="{Binding Grupolist}" ItemDisplayBinding="{Binding Grado}" SelectedItem="{Binding grup}" BackgroundColor="White"    TextColor="White"></Picker>
+        <Picker ItemsSource="{Binding Grupolist}" ItemDisplayBinding="{Binding Seccion}" SelectedItem="{Binding grup}" BackgroundColor="White"    TextColor="White"></Picker>
+        <Picker ItemsSource="{Binding PeriodoList}" ItemDisplayBinding="{Binding Año}" SelectedItem="{Binding peri}" BackgroundColor="White"    TextColor="White"></Picker>
+
+
+        <Button Command="{Binding AsignarGrupoCommand}" TextColor="White" TextTransform="Uppercase" Text="EDITAR" FontAttributes="Bold" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="1,0">
+                    <GradientStop Color="#FFA41E"
+                          Offset="0.1" />
+                    <GradientStop Color="#E68D20"
+                          Offset="1.0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

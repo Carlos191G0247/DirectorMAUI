@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:DirectorMAUI.ViewModel"
+             x:Class="DirectorMAUI.Views.VerAsignarView"
+             Title="VerAsignarView">
+    <ContentPage.BindingContext>
+        <vm:DirectorViewModel></vm:DirectorViewModel>
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        
+        <Button Command="{Binding VerAsignarDocenteGruposCommand}" TextColor="White" TextTransform="Uppercase" Text="EDITAR" FontAttributes="Bold" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="1,0">
+                    <GradientStop Color="#FFA41E"
+                          Offset="0.1" />
+                    <GradientStop Color="#E68D20"
+                          Offset="1.0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </VerticalStackLayout>
+</ContentPage>
